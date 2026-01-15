@@ -29,7 +29,7 @@ export default function DemoModal({ isOpen, onClose }) {
     setStatus({ type: '', message: '' })
 
     try {
-      await axios.post('/api/send-demo-request', {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/send-demo-request`, {
         ...formData,
         phone: `${formData.countryCode} ${formData.phone}`
       })
